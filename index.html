@@ -8,7 +8,7 @@
     <script src="./node_modules/axios/dist/axios.min.js"></script>
     <title>Knockout Form</title>
 </head>
-<body class="bg-gray-200 w-full h-full p-4">
+<body id="snackbar" class="bg-gray-200 w-full h-full p-4">
     <h1 class="m-3 text-start text-2xl border-b p-2 border-gray-700">اطلاعات شخصی</h1>
    
     <form data-bind="submit: POST" >
@@ -31,12 +31,12 @@
             </div>
             <div>
                 <label for="website" class="labelInput">جنسیت</label>
-                    <span class="ml-3 text-base text-start font-medium text-gray-900 dark:text-gray-300">زن</span>
+                    <span class="ml-3 text-base text-start font-medium text-gray-900 dark:text-gray-300">مرد</span>
                     <label class="inline-flex relative items-center justify-center cursor-pointer">
                         <input type="checkbox" data-bind="checked: sexuality" class="sr-only peer">
                         <div class="w-12 h-6 bg-gray-500 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label>
-                    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">مرد</span>
+                    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">زن</span>
             </div>
             <div>
                 <label for="visitors" class="labelInput">وضعیت تاهل</label>
@@ -105,7 +105,29 @@
                 <input type="text" data-bind="textInput: GPA" class="input" placeholder="معدل خود بصورت 18.99 وارد نمایید" required>
             </div>
         </div>
-        <button type="submit" class="mr-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">ایجاد رزومه</button>
+        <button 
+            type="submit" 
+            class="mr-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            onclick="showToast(id)">
+                ایجاد رزومه
+        </button>
+                <!-- toastify -->
+        <div id="success" class="hidden text-gray-200 font-bold fixed right-10 top-5 px-5 py-4 border-r-8 border-green-600 bg-[#535353d9] rounded-lg drop-shadow-lg z-50">
+            <p class="text-base">
+                <!-- Polish the toast with an circle blue "i" (stands for information) -->
+                <span class="mx-2 inline-block px-4 py-1 rounded-full bg-green-600 text-white text-xl font-extrabold">i</span>
+                    رزومه شما با موفقیت ایجاد شد
+            </p>
+        </div>
+                <!-- toastify -->
+        <div id="faild" class="hidden text-gray-200 font-bold fixed right-10 top-5 px-5 py-4 border-r-8 border-red-600 bg-[#535353d9] rounded-lg drop-shadow-lg z-50">
+            <p class="text-base">
+                <!-- Polish the toast with an circle blue "i" (stands for information) -->
+                <span class="mx-2 inline-block px-4 py-1 rounded-full bg-red-600 text-white text-xl font-extrabold">i</span>
+                    ایجاد رزومه ناموفق بود دوباره تلاش کنید
+            </p>
+        </div>
+
 
         <button class="mr-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             <a href="./showData.html">مشاهده رزومه ایجاد شده</a>
@@ -120,8 +142,7 @@
         ko.applyBindings(form);
     </script>
     <script>
-      
-
+       
     </script>
 </body>
 </html>

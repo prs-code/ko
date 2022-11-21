@@ -47,7 +47,11 @@
     p {
         font-family: "Light";
     }
+    span {
+        font-family: "Thin";
+    }
 }
+
 
 @layer components {
     .labelInput {

@@ -4,6 +4,7 @@ module.exports = {
     './components/**/*.{html,js}',
     './pages/**/*.{html,js}',
     './index.html',
+    './showData.html',
   ],
   theme: {
     extend: {},
