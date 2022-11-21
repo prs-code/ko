@@ -76,26 +76,26 @@ const form = {
          { Name: "GPA", Value: form.GPA },
         ]);
 
+        function showToast(id) {
+            document.getElementById(id).classList.remove("hidden");
+            // Hide the toast after 5 seconds (5000ms)
+            // you can set a shorter/longer time by replacing "5000" with another number
+            setTimeout(function (id) {
+                document.getElementById(id).classList.add("hidden");
+            }, 5000);
+        }
+
         const BASE_URL = "http://192.168.100.152/servicebus/run";
     
-    const POST = async () => {
-        await axios.post(`${BASE_URL}/PostData`, Data)
-            .then((response) => {
-                // console.log(response.status);  
-                new Snackbar({
-                    message: "رزومه شما با موفقیت ساخته شد",
-                    dismissible: true,
-                    timeout:5000,
-                }); 
-            }).catch((err) => {
-                console.log(err.message);
-                new Snackbar({
-                    message: "به دلیل بروز خطا عملیات ناموفق بود",
-                    timeout:5000,
-                    status: error,
+        const POST = async () => {
+            await axios.post(`${BASE_URL}/PostData`, Data)
+                .then((response) => {
+                    showToast("success");
+                }).catch((err) => {
+                    console.log(err.message);
+                    showToast("faild");
                 });
-            });
-    };          
+        };          
     
 
     
