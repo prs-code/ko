@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "Thin";
+        src: url('/font/vazir-font-v27.2.2-Fontjo.com/Vazir-Thin.woff')
+             format("woff");
+    }
+    @font-face {
+        font-family: "Light";
+        src: url('/font/vazir-font-v27.2.2-Fontjo.com/Vazir-Light.woff')
+             format("woff");
+    }
+    @font-face {
+        font-family: "Medium";
+        src: url('/font/vazir-font-v27.2.2-Fontjo.com/Vazir-Medium.woff')
+             format("woff");
+    }
+    @font-face {
+        font-family: "Bold";
+        src: url('/font/vazir-font-v27.2.2-Fontjo.com/Vazir-Bold.woff')
+             format("woff");
+    }
+    @font-face {
+        font-family: "Black";
+        src: url('/font/vazir-font-v27.2.2-Fontjo.com/Vazir-Black.woff')
+             format("woff");
+    }
+}
+
+@layer base {
+    html {
+        font-family: "Medium";
+    }
+
+    h1 {
+        font-family: "Black";
+    }
+    h2 {
+        font-family: "Bold";
+    }
+    h3 {
+        font-family: "Medium";
+    }
+    p {
+        font-family: "Light";
+    }
+}
+
+@layer components {
+    .labelInput {
+        @apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+    }
+
+    .input {
+        @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+    }
+}
