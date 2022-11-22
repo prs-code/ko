@@ -5,37 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
-    <script src="./node_modules/axios/dist/axios.min.js"></script>
     <title>Knockout Form</title>
 </head>
-<body  class="p-2 bg-gray-300">
+<body  class="p-2 bg-gray-300 mx-10">
     <button type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
         <a href="./index.html">برگشت به رزومه ساز</a>
-
     </button>
     <h1 class="m-3 text-start text-2xl p-2">جست و جو بر اساس :</h1>
-    <div class="py-2 px-4 flex justify-center items-center border-b  border-gray-700">
-        <div class="flex items-center w-1/3 mx-1">
-            <input type="text" data-bind="textInput: firstName" class="input" placeholder="نام خانوادگی" required>
+    <form
+        id="form"
+        data-bind="submit: getData" 
+        class="py-2 px-4 flex justify-center items-center border-b  border-gray-700">
+        <div class="flex items-center w-1/2 mx-1">
+            <input type="text" data-bind="textInput: firstName" class="input" placeholder="نــــــــــــــــــام" required />
         </div>یا
-        <div class=" flex items-center w-1/3 mx-1">
-            <input type="text" data-bind="textInput: firstName" class="input" placeholder="تلفن همراه" required>
-        </div>یا
-        <div class=" flex items-center w-1/3 mx-1">
-            <input type="text" data-bind="textInput: firstName" class="input" placeholder="شهر" required>
+        <div class=" flex items-center w-1/2 mx-1">
+            <input type="text" data-bind="textInput: lastName" class="input" placeholder="نام خانوادگــــــــــــــــــــــی" required/>
         </div>
-        <button type="button" id="Btn" class= "text-gray-200 bg-blue-700 hover:bg-gray-900 border border-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+        <button type="submit" id="Btn"  class= "text-gray-200 bg-blue-700 hover:bg-gray-900 border border-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
             نمایش
         </button>
-    </div>
-
-    <div class="mx-10 my-6 text-center bg-gray-50 rounded-lg">
+    </form>
+    
+    <div
+        id="showCV" 
+        class=" my-6 text-center bg-gray-500 rounded-lg">
         <div class="flex items-center justify-evenly">
             <div class="flex flex-col items-center justify-center py-4 w-1/3 h-[250px]">
                 <img 
-                    src="./icons/user.png" 
-                    alt="icon"
-                    class="w-32 h-32 mb-5"/>
+                src="./icons/user.png" 
+                alt="icon"
+                class="w-32 h-32 mb-5"/>
                 <h1 class="text-3xl">مصطفی موسوی نیک</h1>
             </div>
             <div class="w-2/3">
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="text-start p-5 flex mt-10">
             <div class="text-start w-1/3 m-3">
                 <h1 class="border-b mb-5">درباره ی من</h1>
@@ -86,18 +86,37 @@
             </div>
             <div class="text-start w-1/3 m-3">
                 <h1 class="border-b mb-5">مهارت ها</h1>
-                    <ul class="list-disc">
-                        <li><span>Html & Css</span></li>
-                        <li><span>Javascript</span></li>
-                        <li><span>Ract JS</span></li>
-                        <li><span>Tailwind Css</span></li>
-                        <li><span>Knockout JS</span></li>
-                    </ul>
+                <ul class="list-disc">
+                    <li><span>Html & Css</span></li>
+                    <li><span>Javascript</span></li>
+                    <li><span>Ract JS</span></li>
+                    <li><span>Tailwind Css</span></li>
+                    <li><span>Knockout JS</span></li>
+                </ul>
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" src="./showDataViewModel.js"></script>
+    <!-- toastify -->
+    <div id="wellcom" class="hidden text-gray-200 font-bold fixed right-10 top-5 px-5 py-4 border-r-8 border-green-600 bg-[#535353d9] rounded-lg drop-shadow-lg z-50">
+        <p class="text-base">
+            <!-- Polish the toast with an circle blue "i" (stands for information) -->
+            <span class="mx-2 inline-block px-4 py-1 rounded-full bg-green-600 text-white text-xl font-extrabold">i</span>
+            دریافت رزومه موفقیت آمیز بود
+        </p>
+    </div>
+    <!-- toastify -->
+    <div id="notExist" class="hidden text-gray-200 font-bold fixed right-10 top-5 px-5 py-4 border-r-8 border-red-600 bg-[#535353d9] rounded-lg drop-shadow-lg z-50">
+        <p class="text-base">
+            <!-- Polish the toast with an circle blue "i" (stands for information) -->
+            <span class="mx-2 inline-block px-4 py-1 rounded-full bg-red-600 text-white text-xl font-extrabold">i</span>
+            اطلاعات نادرست یا عدم وجود رزومه
+        </p>
+    </div>
+    
+    <!--scripts-->
     <script type="text/javascript" src="./knockoutJS/Knockout.js"></script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="./showDataViewModel.js"></script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
 </body>
 </html> 

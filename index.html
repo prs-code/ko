@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
-    <script src="./node_modules/axios/dist/axios.min.js"></script>
     <title>Knockout Form</title>
 </head>
 <body id="snackbar" class="bg-gray-200 w-full h-full p-4">
@@ -27,35 +26,35 @@
             </div>  
             <div>
                 <label for="phone" class="labelInput">تلفن تماس</label>
-                <input type="tel" data-bind="textInput: phone" class="input" placeholder="0915-077-1848" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                <input type="tel" data-bind="textInput: phone" class="input" placeholder="0915-077-1848" pattern="[0-9]{4}[0-9]{3}[0-9]{4}" required>
             </div>
             <div>
                 <label for="website" class="labelInput">جنسیت</label>
-                    <span class="ml-3 text-base text-start font-medium text-gray-900 dark:text-gray-300">مرد</span>
-                    <label class="inline-flex relative items-center justify-center cursor-pointer">
+                <span class="ml-3 text-base text-start font-medium text-gray-900 dark:text-gray-300">مرد</span>
+                <label class="inline-flex relative items-center justify-center cursor-pointer">
                         <input type="checkbox" data-bind="checked: sexuality" class="sr-only peer">
                         <div class="w-12 h-6 bg-gray-500 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     </label>
                     <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">زن</span>
-            </div>
-            <div>
-                <label for="visitors" class="labelInput">وضعیت تاهل</label>
-                <span class="ml-3 text-sm text-center font-medium text-gray-900 dark:text-gray-300">متاهل</span>
-                <label class="inline-flex relative items-center cursor-pointer">
-                    <input type="checkbox" data-bind="checked: Maritalstatus" class="sr-only peer">
-                    <div class="w-12 h-6 bg-gray-500 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                </label>
-                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">مجرد</span>
-            </div>
-            <div>
-                <label for="visitors" class="labelInput">وضعیت نظام وظیفه </label>
-                <select data-bind="options: optionsMilitaryService, selectedOptions: MilitaryService" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">               
+                </div>
+                <div>
+                    <label for="visitors" class="labelInput">وضعیت تاهل</label>
+                    <span class="ml-3 text-sm text-center font-medium text-gray-900 dark:text-gray-300">متاهل</span>
+                    <label class="inline-flex relative items-center cursor-pointer">
+                        <input type="checkbox" data-bind="checked: Maritalstatus" class="sr-only peer">
+                        <div class="w-12 h-6 bg-gray-500 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-500 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    </label>
+                    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">مجرد</span>
+                </div>
+                <div data-bind="visible: sexuality">
+                    <label for="visitors" class="labelInput">وضعیت نظام وظیفه </label>
+                    <select data-bind="options: optionsMilitaryService, value: MilitaryService" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">               
                     </select>
-            </div>
-        
-            <div>
-                <label for="visitors" class="labelInput">حقوق درخواستی</label>
-                <select data-bind="options: optionRightsRequested, selectedOptions: MilitaryService" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+                
+                <div>
+                    <label for="visitors" class="labelInput">حقوق درخواستی</label>
+                <select data-bind="options: optionRightsRequested, value: right" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </select>
             </div>
             <div class="relative">
@@ -68,7 +67,7 @@
             </div>
             <div>
                 <label for="visitors" class="labelInput">شهر محل سکونت</label>
-                <select data-bind="options: optionsCity, selectedOptions: city" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> 
+                <select data-bind="options: optionsCity, value: city, optionsCaption: 'انتخاب ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> 
                 </select>
             </div>
             <div>
@@ -77,7 +76,9 @@
             </div>
              
         </div>
-        <div class="mb-6">
+        <div 
+            class="mb-6"
+            data-bind="if: !!city()">
             <label for="email" class="labelInput">محله</label>
             <textarea data-bind="textInput: Address" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="آدرس خود را وارد نمایید"></textarea>
         </div>
@@ -85,64 +86,58 @@
             <label for="email" class="labelInput">مهارت ها</label>
             <textarea data-bind="textInput: skills" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="حداکثر 3 مورد"></textarea>
         </div>
+    </div>
+    <h1 class="m-3 text-start text-2xl border-b p-2 border-gray-700">سوابق تحصیلی</h1>
+    <div class="grid-cols-2">
+        <label for="visitors" class="labelInput">آخرین مقطع تحصیلی</label>
+        <select data-bind="options: optionGrade, value: Grade" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></select>
+    </div>
+    <div class="grid gap-8 p-4 mb-6 md:grid-cols-3">
+        <div>
+            <label for="last_name" class="labelInput">رشته تحصیلی</label>
+            <input type="text" data-bind="textInput: Major" class="input" placeholder="رشته تحصیلی خود را وارد نمایید" required>
         </div>
-        <h1 class="m-3 text-start text-2xl border-b p-2 border-gray-700">سوابق تحصیلی</h1>
-        <div class="grid-cols-2">
-            <label for="visitors" class="labelInput">آخرین مقطع تحصیلی</label>
-            <select data-bind="options: optionGrade, selectedOptions: Grade" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></select>
-        </div>
-        <div class="grid gap-8 p-4 mb-6 md:grid-cols-3">
-            <div>
-                <label for="last_name" class="labelInput">رشته تحصیلی</label>
-                <input type="text" data-bind="textInput: Major" class="input" placeholder="رشته تحصیلی خود را وارد نمایید" required>
-            </div>
-            <div>
+        <div>
                 <label for="last_name" class="labelInput">نام دانشگاه</label>
                 <input type="text" data-bind="textInput: univercity" class="input" placeholder="نام دانشگاه خود را وارد نمایید" required>
             </div>
             <div>
                 <label for="last_name" class="labelInput">معدل</label>
-                <input type="text" data-bind="textInput: GPA" class="input" placeholder="معدل خود بصورت 18.99 وارد نمایید" required>
+                <input type="text" data-bind="textInput: GPA" class="input" placeholder="معدل خود بصورت بدون اعشار وارد نمایید" required>
             </div>
         </div>
         <button 
-            type="submit" 
-            class="mr-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            onclick="showToast(id)">
-                ایجاد رزومه
-        </button>
-                <!-- toastify -->
+        type="submit" 
+        class="mr-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        ایجاد رزومه
+    </button>
+    <!-- toastify -->
         <div id="success" class="hidden text-gray-200 font-bold fixed right-10 top-5 px-5 py-4 border-r-8 border-green-600 bg-[#535353d9] rounded-lg drop-shadow-lg z-50">
             <p class="text-base">
                 <!-- Polish the toast with an circle blue "i" (stands for information) -->
                 <span class="mx-2 inline-block px-4 py-1 rounded-full bg-green-600 text-white text-xl font-extrabold">i</span>
                     رزومه شما با موفقیت ایجاد شد
-            </p>
-        </div>
-                <!-- toastify -->
-        <div id="faild" class="hidden text-gray-200 font-bold fixed right-10 top-5 px-5 py-4 border-r-8 border-red-600 bg-[#535353d9] rounded-lg drop-shadow-lg z-50">
-            <p class="text-base">
-                <!-- Polish the toast with an circle blue "i" (stands for information) -->
-                <span class="mx-2 inline-block px-4 py-1 rounded-full bg-red-600 text-white text-xl font-extrabold">i</span>
+                </p>
+            </div>
+            <!-- toastify -->
+            <div id="faild" class="hidden text-gray-200 font-bold fixed right-10 top-5 px-5 py-4 border-r-8 border-red-600 bg-[#535353d9] rounded-lg drop-shadow-lg z-50">
+                <p class="text-base">
+                    <!-- Polish the toast with an circle blue "i" (stands for information) -->
+                    <span class="mx-2 inline-block px-4 py-1 rounded-full bg-red-600 text-white text-xl font-extrabold">i</span>
                     ایجاد رزومه ناموفق بود دوباره تلاش کنید
             </p>
         </div>
-
-
+        
+        
         <button class="mr-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             <a href="./showData.html">مشاهده رزومه ایجاد شده</a>
         </button>
-
+        
     </form>
-
     
+    <!-- scripts -->
     <script type="text/javascript" src="./knockoutJS/Knockout.js"></script>
     <script src="./FormViewModel.js"></script>
-    <script>
-        ko.applyBindings(form);
-    </script>
-    <script>
-       
-    </script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
 </body>
 </html>
