@@ -38,7 +38,6 @@ const form = {
     "زنجان",
   ]),
   optionRightsRequested: ko.observableArray([
-    "",
     "2 تا 3 میلیون تومان",
     "3 تا 4 میلیون تومان",
     "4 تا 5 میلیون تومان",
@@ -46,7 +45,6 @@ const form = {
     "بر اساس قانون کار",
   ]),
   optionGrade: ko.observableArray([
-    "",
     "زیر دیپلم",
     "دیپلم",
     "کاردانی",
@@ -88,12 +86,10 @@ const POST = async () => {
     { Name: "email", Value: form.email() },
   ]);
 
-  console.log(Data);
 
   await axios
     .post(`${BASE_URL}/PostData`, Data)
-    .then((response) => {
-      console.log(response.data);
+    .then(() => {
       showToast("success");
     })
     .catch((err) => {

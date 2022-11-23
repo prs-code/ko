@@ -14,31 +14,38 @@
     <h1 class="m-3 text-start text-2xl p-2">جست و جو بر اساس :</h1>
     <form
         id="form"
-        data-bind="submit: getData" 
+        data-bind="submit: getData"
         class="py-2 px-4 flex justify-center items-center border-b  border-gray-700">
         <div class="flex items-center w-1/2 mx-1">
             <input type="text" data-bind="textInput: firstName" class="input" placeholder="نــــــــــــــــــام" required />
-        </div>یا
+        </div>و
         <div class=" flex items-center w-1/2 mx-1">
             <input type="text" data-bind="textInput: lastName" class="input" placeholder="نام خانوادگــــــــــــــــــــــی" required/>
         </div>
-        <button type="submit" id="Btn"  class= "text-gray-200 bg-blue-700 hover:bg-gray-900 border border-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+        <button  
+            type="submit" 
+            id="Btn"  
+            class= "text-gray-200 bg-blue-700 hover:bg-gray-900 border border-blue-700 focus:outline-none focus:ring-4 focus:ring-gray-300 rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
             نمایش
         </button>
     </form>
     
     <div
         id="showCV" 
-        class=" my-6 text-center bg-gray-500 rounded-lg">
+        class=" my-6 mt-20 text-center bg-gray-500 rounded-lg">
         <div class="flex items-center justify-evenly">
-            <div class="flex flex-col items-center justify-center py-4 w-1/3 h-[250px]">
+            <div 
+                class="flex flex-col items-center justify-center py-4 w-1/3 h-[250px]">
+                
                 <img 
                 src="./icons/user.png" 
                 alt="icon"
                 class="w-32 h-32 mb-5"/>
-                <h1 class="text-3xl">مصطفی موسوی نیک</h1>
+                <h1 
+                    data-bind="text : CVDataRecieve().name"
+                    class="text-3xl">مصطفی موسوی نیک</h1>
             </div>
-            <div class="w-2/3">
+            <div class="w-2/3 p-5">
                 <h1 class="border-b">اطلاعات فردی</h1>
                 <div class="grid grid-cols-2 mt-10">
                     <div class="flex items-start justify-start my-2">
@@ -51,7 +58,9 @@
                     </div>
                     <div class="flex items-start justify-start my-2">
                         <p>شماره موبایل :</p>
-                        <span class="mr-2">09150771848</span>
+                        <span
+                            data-bind="text: CVDataRecieve().phoneNumber" 
+                            class="mr-2"></span>
                     </div>
                     <div class="flex items-start justify-start my-2">
                         <p>تاریخ تولد :</p>
