@@ -34,27 +34,29 @@
         id="showCV" 
         class=" my-6 mt-20 text-center bg-gray-500 rounded-lg">
         <div class="flex items-center justify-evenly">
-            <div 
-                class="flex flex-col items-center justify-center py-4 w-1/3 h-[250px]">
-                
+            <div class="flex flex-col items-center justify-center py-4 w-1/3 h-[250px]">
                 <img 
                 src="./icons/user.png" 
                 alt="icon"
                 class="w-32 h-32 mb-5"/>
                 <h1 
-                    data-bind="text : CVDataRecieve().name"
-                    class="text-3xl">مصطفی موسوی نیک</h1>
+                    data-bind="text : fullName()"
+                    class="text-3xl"></h1>
             </div>
             <div class="w-2/3 p-5">
                 <h1 class="border-b">اطلاعات فردی</h1>
                 <div class="grid grid-cols-2 mt-10">
                     <div class="flex items-start justify-start my-2">
                         <p>تخصص :</p>
-                        <span class="mr-2">Front-End Developer</span>
+                        <span
+                            data-bind="text: CVDataRecieve().favorite" 
+                            class="mr-2"></span>
                     </div>
                     <div class="flex items-start justify-start my-2">
                         <p>آدرس ایمیل :</p>
-                        <span class="mr-2">1374.seyedmostafa@gmail.com</span>
+                        <span
+                            data-bind="text: CVDataRecieve().email" 
+                            class="mr-2"></span>
                     </div>
                     <div class="flex items-start justify-start my-2">
                         <p>شماره موبایل :</p>
@@ -64,16 +66,22 @@
                     </div>
                     <div class="flex items-start justify-start my-2">
                         <p>تاریخ تولد :</p>
-                        <span class="mr-2">1374/12/16</span>
+                        <span
+                            data-bind="text: CVDataRecieve().DateOfBirth" 
+                            class="mr-2"></span>
                     </div>
                     <div class="flex items-start justify-start my-2">
                         <p>شهر محل سکونت :</p>
-                        <span class="mr-2">مشهد</span>
+                        <span
+                            data-bind="text: CVDataRecieve().city" 
+                            class="mr-2"></span>
                     </div>
                     <div class="flex items-start justify-start my-2">
                         <p>آدرس :</p>
-                        <span class="mr-2">
-                            دلاوران 20 نخل 3 پ 22
+                        <span
+                            data-bind="text: CVDataRecieve().Address" 
+                            class="mr-2">
+                            
                         </span>
                     </div>
                 </div>
@@ -83,25 +91,17 @@
         <div class="text-start p-5 flex mt-10">
             <div class="text-start w-1/3 m-3">
                 <h1 class="border-b mb-5">درباره ی من</h1>
-                <p>علاقمند به یادگیری چیزهای جدید</p>
-                <p>علاقمند به یادگیری زبان</p>
-                <p>مشتاق پیشرفت و روبرو شدن با چالش های جدید و مختلف</p>
+                <p data-bind="text: CVDataRecieve().AboutMe"></p>
             </div>
             <div class="text-start w-1/3 m-3">
                 <h1 class="border-b mb-5">سوابق تحصیلی</h1>
-                <h3>دیپلم</h3>
-                <p>علوم تجربی</p>
-                <p>15.66</p>
+                <h3 data-bind="text: CVDataRecieve().Grade"></h3>
+                <p data-bind="text: CVDataRecieve().Major"></p>
+                <p data-bind="text: CVDataRecieve().GPA"></p>
             </div>
             <div class="text-start w-1/3 m-3">
                 <h1 class="border-b mb-5">مهارت ها</h1>
-                <ul class="list-disc">
-                    <li><span>Html & Css</span></li>
-                    <li><span>Javascript</span></li>
-                    <li><span>Ract JS</span></li>
-                    <li><span>Tailwind Css</span></li>
-                    <li><span>Knockout JS</span></li>
-                </ul>
+                <span data-bind="text: CVDataRecieve().skills"></span>
             </div>
         </div>
     </div>

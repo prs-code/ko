@@ -22,7 +22,7 @@
             </div>
             <div>
                 <label for="company" class="labelInput">ایمیل</label>
-                <input type="text" data-bind="textInput: email" class="input" placeholder="graph@gmail.com" pattern="" required>
+                <input type="text" data-bind="textInput: email" class="input" placeholder="graph@gmail.com" pattern="*[*{2,50}]@*[*{2,50}].*[*{2,50}]" required>
             </div>  
             <div>
                 <label for="phone" class="labelInput">تلفن تماس</label>
@@ -48,13 +48,13 @@
                 </div>
                 <div data-bind="visible: sexuality">
                     <label for="visitors" class="labelInput">وضعیت نظام وظیفه </label>
-                    <select data-bind="options: optionsMilitaryService, value: MilitaryService" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">               
+                    <select data-bind="options: optionsMilitaryService, value: MilitaryService, optionsCaption: 'انتخاب کنید ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">               
                     </select>
                 </div>
                 
                 <div>
                     <label for="visitors" class="labelInput">حقوق درخواستی</label>
-                <select data-bind="options: optionRightsRequested, value: right, optionsCaption: 'انتخاب ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select data-bind="options: optionRightsRequested, value: right, optionsCaption: 'انتخاب کنید ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </select>
             </div>
             <div class="relative">
@@ -67,7 +67,7 @@
             </div>
             <div>
                 <label for="visitors" class="labelInput">شهر محل سکونت</label>
-                <select data-bind="options: optionsCity, value: city, optionsCaption: 'انتخاب ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> 
+                <select data-bind="options: optionsCity, value: city, optionsCaption: 'انتخاب کنید ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> 
                 </select>
             </div>
             <div>
@@ -97,15 +97,15 @@
         data-bind="if: !!Grade() || Grade == '1'">
         <div>
             <label for="last_name" class="labelInput">رشته تحصیلی</label>
-            <input type="text" data-bind="textInput: Major" class="input" placeholder="رشته تحصیلی خود را وارد نمایید" required>
+            <input type="text" data-bind="textInput: Major" class="input" placeholder="رشته تحصیلی خود را وارد نمایید">
         </div>
         <div>
                 <label for="last_name" class="labelInput">نام دانشگاه</label>
-                <input type="text" data-bind="textInput: univercity" class="input" placeholder="نام دانشگاه خود را وارد نمایید" required>
+                <input type="text" data-bind="textInput: univercity" class="input" placeholder="نام دانشگاه خود را وارد نمایید" >
             </div>
             <div>
                 <label for="last_name" class="labelInput">معدل</label>
-                <input type="text" data-bind="textInput: GPA" class="input" placeholder="معدل خود بصورت بدون اعشار وارد نمایید" required>
+                <input type="text" data-bind="textInput: GPA" class="input" placeholder="معدل خود بصورت بدون اعشار وارد نمایید" >
             </div>
         </div>
         <button 

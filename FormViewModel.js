@@ -1,5 +1,6 @@
 // ViewModel
 const form = {
+  
   firstName: ko.observable(""),
   lastName: ko.observable(""),
   email: ko.observable(""),
@@ -21,7 +22,6 @@ const form = {
   favorite: ko.observable(""),
 
   optionsMilitaryService: ko.observableArray([
-    "",
     "انجام شده",
     "معافیت تحصیلی",
     "معافیت دايم",
@@ -42,6 +42,7 @@ const form = {
     "3 تا 4 میلیون تومان",
     "4 تا 5 میلیون تومان",
     "5 تا 6 میلیون تومان",
+    "6 تا 7 میلیون تومان",
     "بر اساس قانون کار",
   ]),
   optionGrade: ko.observableArray([
@@ -84,6 +85,7 @@ const POST = async () => {
     { Name: "skills", Value: form.skills() },
     { Name: "GPA", Value: form.GPA() },
     { Name: "email", Value: form.email() },
+    { Name: "DateOfBirth", Value: form.DateOfBirth() },
   ]);
 
 
