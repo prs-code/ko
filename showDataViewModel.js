@@ -1,8 +1,7 @@
-//ViewModel_1//
-
+//ViewModel//
 const CV = {
-  firstName: ko.observable("نام"),
-  lastName: ko.observable("نام خانوادگی"),
+  firstName: ko.observable(""),
+  lastName: ko.observable(""),
   CVDataRecieve: ko.observableArray(),
   fullName: ko.observable(""),
   
@@ -28,13 +27,6 @@ const CV = {
       CV.toast("wellcom");
       const { data } = await axios.post(`${BASE_URL}/GetData`, Data);
       CV.CVDataRecieve(JSON.parse(data)[0]);
-      // if (CVDataRecieve) {
-        //   CV.fullName = ko.computed(function () {
-      //     return CV.CVDataRecieve.name() + " " + CV.CVDataRecieve.lastName();
-      //   });
-      // }
-
-      console.log(CV.CVDataRecieve.fullName);
       console.log(CV.CVDataRecieve());
     } catch (error) {
       console.log(error);
@@ -43,8 +35,10 @@ const CV = {
   },
 };
 
+
 CV.fullName = ko.computed(function () {
-  return CV.CVDataRecieve.name() + " " + CV.CVDataRecieve.lastName();
+  return CV.CVDataRecieve().name + " " + CV.CVDataRecieve().lastName;
 });
+
 
 ko.applyBindings(CV);

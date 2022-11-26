@@ -680,10 +680,6 @@ span {
   margin: 0.75rem;
 }
 
-.m-20 {
-  margin: 5rem;
-}
-
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -709,16 +705,6 @@ span {
   margin-bottom: 0.5rem;
 }
 
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-.mx-20 {
-  margin-left: 5rem;
-  margin-right: 5rem;
-}
-
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -739,6 +725,10 @@ span {
   margin-bottom: 0.5rem;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .mb-5 {
   margin-bottom: 1.25rem;
 }
@@ -747,24 +737,8 @@ span {
   margin-top: 2.5rem;
 }
 
-.ml-12 {
-  margin-left: 3rem;
-}
-
-.ml-8 {
-  margin-left: 2rem;
-}
-
-.ml-4 {
-  margin-left: 1rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .block {
@@ -835,10 +809,6 @@ span {
   cursor: pointer;
 }
 
-.list-disc {
-  list-style-type: disc;
-}
-
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -861,6 +831,14 @@ span {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
 }
 
 .justify-evenly {
@@ -969,6 +947,37 @@ span {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[\] {
+  background-color: ;
+}
+
+.bg-\[\#4F5963\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 89 99 / var(--tw-bg-opacity));
+}
+
+.bg-\[rgb\(79\2c 89\2c 99\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 89 99 / var(--tw-bg-opacity));
+}
+
+.bg-\[rgba\(79\2c 89\2c 99\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 89 99 / var(--tw-bg-opacity));
+}
+
+.bg-\[rgba\(79\2c 89\2c 99\2c 0\.5\)\] {
+  background-color: rgba(79,89,99,0.5);
+}
+
+.bg-\[rgba\(79\2c 89\2c 99\2c 0\.4\)\] {
+  background-color: rgba(79,89,99,0.4);
+}
+
+.bg-\[rgba\(79\2c 89\2c 99\2c 0\.40\)\] {
+  background-color: rgba(79,89,99,0.40);
+}
+
 .p-4 {
   padding: 1rem;
 }
@@ -1058,6 +1067,14 @@ span {
 
 .font-extrabold {
   font-weight: 800;
+}
+
+.leading-5 {
+  line-height: 1.25rem;
+}
+
+.leading-10 {
+  line-height: 2.5rem;
 }
 
 .text-gray-900 {

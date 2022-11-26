@@ -10,7 +10,7 @@
 <body id="snackbar" class="bg-gray-200 w-full h-full p-4">
     <h1 class="m-3 text-start text-2xl border-b p-2 border-gray-700">اطلاعات شخصی</h1>
    
-    <form data-bind="submit: POST" >
+    <form data-bind="submit: POSTDATA" >
         <div class="grid gap-6 mb-6 md:grid-cols-2">
             <div class="relative">
                 <label for="first_name" class="labelInput">نام</label>
@@ -22,7 +22,7 @@
             </div>
             <div>
                 <label for="company" class="labelInput">ایمیل</label>
-                <input type="text" data-bind="textInput: email" class="input" placeholder="graph@gmail.com" pattern="*[*{2,50}]@*[*{2,50}].*[*{2,50}]" required>
+                <input type="text" data-bind="textInput: email" class="input" placeholder="graph@gmail.com"required>
             </div>  
             <div>
                 <label for="phone" class="labelInput">تلفن تماس</label>
@@ -48,13 +48,13 @@
                 </div>
                 <div data-bind="visible: sexuality">
                     <label for="visitors" class="labelInput">وضعیت نظام وظیفه </label>
-                    <select data-bind="options: optionsMilitaryService, value: MilitaryService, optionsCaption: 'انتخاب کنید ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">               
+                    <select data-bind="options: optionsMilitaryService, optionsText: 'Text', optionsValue: 'Value', value: MilitaryService, optionsCaption: 'انتخاب کنید ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">               
                     </select>
                 </div>
                 
                 <div>
                     <label for="visitors" class="labelInput">حقوق درخواستی</label>
-                <select data-bind="options: optionRightsRequested, value: right, optionsCaption: 'انتخاب کنید ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select data-bind="options: optionRightsRequested, optionsText: 'Text', optionsValue: 'Value', value: right, optionsCaption: 'انتخاب کنید ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </select>
             </div>
             <div class="relative">
@@ -67,7 +67,7 @@
             </div>
             <div>
                 <label for="visitors" class="labelInput">شهر محل سکونت</label>
-                <select data-bind="options: optionsCity, value: city, optionsCaption: 'انتخاب کنید ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> 
+                <select data-bind="options: optionsCity, optionsText: 'Text', optionsValue: 'Value', value: city, optionsCaption: 'انتخاب کنید ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> 
                 </select>
             </div>
             <div>
@@ -90,7 +90,7 @@
     <h1 class="m-3 text-start text-2xl border-b p-2 border-gray-700">سوابق تحصیلی</h1>
     <div class="grid-cols-2">
         <label for="visitors" class="labelInput">آخرین مقطع تحصیلی</label>
-        <select data-bind="options: optionGrade, value: Grade, optionsCaption: 'انتخاب ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></select>
+        <select data-bind="options: optionGrade, optionsText: 'Text', optionsValue: 'Value', value: Grade, optionsCaption: 'انتخاب ...'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></select>
     </div>
     <div 
         class="grid gap-8 p-4 mb-6 md:grid-cols-3"
